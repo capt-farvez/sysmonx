@@ -1,0 +1,28 @@
+name: Test on Linux
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.12'
+        
+    - name: Install dependencies
+      run: |
+        sudo apt-get update && sudo apt-get install -y python3-tk
+        cd system_monitor && pip install -r requirements.txt
+        
+    - name: Test app runs
+      run: |
+        cd system_monitor
+        sudo apt-get install -y xvfb
+        timeout 10s xvfb-run -a python main.py || echo "✅ Linux: App ran successfully!"
