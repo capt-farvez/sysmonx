@@ -26,4 +26,7 @@ def main():
     floating_window.start_display()
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except KeyboardInterrupt:
+        print("Exiting SysMonX...")
