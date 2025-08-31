@@ -18,7 +18,7 @@ Shows CPU usage, RAM usage, and network upload/download speeds in a compact, alw
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/capt-farvez/win_system_monitor.git
+   git clone https://github.com/capt-farvez/sysmonx.git
    ```
 
 2. **Navigate to the project directory:**
@@ -32,9 +32,14 @@ Shows CPU usage, RAM usage, and network upload/download speeds in a compact, alw
    ```
 
 4. **Activate the virtual environment:**
-   ```bash
-   .\venv\Scripts\activate
-   ```
+    - **Windows:**
+       ```bash
+       .\venv\Scripts\activate
+       ```
+    - **Linux/macOS:**
+       ```bash
+       source venv/bin/activate
+       ```
 
 5. **Install dependencies:**
    ```bash
